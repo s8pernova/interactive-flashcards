@@ -1,0 +1,18 @@
+[
+	{
+		"id": 1,
+		"trueFacts": [
+			"The CIA experimented with mind control in Project MKUltra",
+			"The US government poisoned alcohol during Prohibition"
+		],
+		"fakeFact": "The moon landing was faked by Stanley Kubrick"
+	},
+	{
+		"id": 2,
+		"trueFacts": [
+			"The NSA has been spying on US citizens",
+			"The Tuskegee Syphilis Study deliberately infected African Americans"
+		],
+		"fakeFact": "Bigfoot is a government-engineered species"
+	}
+]
