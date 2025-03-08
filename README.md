@@ -13,14 +13,13 @@
 - [x] A single card at a time is displayed, only showing one of the components of the information pair
 - [x] Create a list of card pairs (an array of dictionaries where each dictionary contains the question and answer is perfectly fine)
 - [x] Clicking on the card shows the corresponding component of the information pair
-- [ ] Clicking the next button displays a random new card
+- [x] Clicking the next button displays a random new card
 
 ## 🚀 Stretch Features
 
-- [ ] Cards contain images in addition to or in place of text
 - [x] Cards have different visual styles such as color based on their category
 
 <br>
-<!-- <img src='./src/assets/walkthrough-video.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./src/assets/walkthrough-video.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with [Ezgif](https://ezgif.com/) -->
+GIF created with [Ezgif](https://ezgif.com/)

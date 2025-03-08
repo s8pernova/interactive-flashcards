@@ -8,7 +8,7 @@ const Cards = ({
 	cardColor,
 }) => {
 	const { trueFacts, fakeFact } = currentCard;
-	const allFacts = [...trueFacts, fakeFact];
+	const allFacts = [...trueFacts, fakeFact].sort(() => Math.random() - 0.5);
 
 	return (
 		<div
@@ -25,8 +25,8 @@ const Cards = ({
 				<div>
 					<h3>Conspiracy Theories:</h3>
 					<ol>
-						{allFacts.map((fact, index) => (
-							<li key={index}>{fact}</li>
+						{allFacts.map((fact) => (
+							<li>{fact}</li>
 						))}
 					</ol>
 				</div>
