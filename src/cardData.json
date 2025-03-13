@@ -1,0 +1,101 @@
+[
+	{
+		"trueFacts": [
+			"Operation Paperclip recruited Nazi scientists to the US",
+			"The government tested LSD on unsuspecting citizens in the 60s"
+		],
+		"fakeFact": "The world is controlled by shape-shifting reptiles",
+		"difficulty": "easy",
+		"type": "multiple-choice"
+	},
+	{
+		"trueFacts": [
+			"The FBI kept a file on Einstein due to his political views",
+			"The Montauk Project was an alleged series of secret United States government projects"
+		],
+		"fakeFact": "The Earth is hollow and inhabited",
+		"difficulty": "easy",
+		"type": "multiple-choice"
+	},
+	{
+		"trueFacts": [
+			"Project Blue Book was a series of studies on UFOs by the US Air Force",
+			"The Philadelphia Experiment was an alleged military experiment"
+		],
+		"fakeFact": "The internet is a digital illusion created by AI",
+		"difficulty": "easy",
+		"type": "multiple-choice"
+	},
+	{
+		"question": "What mythical creature is often associated with government cover-ups?",
+		"answer": "Bigfoot",
+		"difficulty": "easy",
+		"type": "text-input"
+	},
+	{
+		"trueFacts": [
+			"The NSA has been spying on US citizens",
+			"The Tuskegee Syphilis Study deliberately infected African Americans"
+		],
+		"fakeFact": "Bigfoot is a government-engineered species",
+		"difficulty": "medium",
+		"type": "multiple-choice"
+	},
+	{
+		"trueFacts": [
+			"The US Navy patented a high-energy electromagnetic field generator",
+			"Operation Northwoods proposed committing acts of terrorism against Americans"
+		],
+		"fakeFact": "Clouds are created in factories to control global warming",
+		"difficulty": "medium",
+		"type": "multiple-choice"
+	},
+	{
+		"trueFacts": [
+			"Project Sunshine involved using the bodies of deceased infants in radioactive testing",
+			"The CIA's Heart Attack Gun is a weapon that can induce a heart attack"
+		],
+		"fakeFact": "Wi-Fi signals are used to transmit subliminal messages to the population",
+		"difficulty": "medium",
+		"type": "multiple-choice"
+	},
+	{
+		"question": "Which project was falsely rumored to involve time travel?",
+		"answer": "Montauk",
+		"difficulty": "medium",
+		"type": "text-input"
+	},
+	{
+		"trueFacts": [
+			"The CIA experimented with mind control in Project MKUltra",
+			"The US government poisoned alcohol during Prohibition"
+		],
+		"fakeFact": "The moon landing was faked by Stanley Kubrick",
+		"difficulty": "hard",
+		"type": "multiple-choice"
+	},
+	{
+		"trueFacts": [
+			"The government has a secret bunker under Denver Airport",
+			"The High Frequency Active Auroral Research Program (HAARP) can control weather"
+		],
+		"fakeFact": "Time travel was discovered in 1985 but has been kept secret",
+		"difficulty": "hard",
+		"type": "multiple-choice"
+	},
+	{
+		"trueFacts": [
+			"Project Blue Book was a series of studies on UFOs by the United States Air Force",
+			"The FBI investigated whether Bigfoot was real in the 1970s"
+		],
+		"fakeFact": "Global warming is a hoax invented to distract from the world's diminishing oxygen supply",
+		"difficulty": "hard",
+		"type": "multiple-choice"
+	},
+	{
+		"question": "What operation is mistakenly believed to have aimed at creating mind-controlled soldiers?",
+		"answer": "MKUltra",
+		"difficulty": "hard",
+		"type": "text-input"
+	}
+]
