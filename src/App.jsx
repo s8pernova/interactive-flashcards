@@ -5,7 +5,7 @@ import cardData from "./cardData.json";
 const App = () => {
 	const [hasSubmittedGuess, setHasSubmittedGuess] = useState(false);
 	const [currentCardIndex, setCurrentCardIndex] = useState(0);
-	const [isShuffled, setIsShuffled] = useState(false);
+	// const [isShuffled, setIsShuffled] = useState(false);
 	const [cards, setCards] = useState(cardData);
 
 	const handleGuessSubmit = (isCorrect) => {
@@ -22,18 +22,18 @@ const App = () => {
 			[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
 		}
 		setCards(shuffled);
-		setIsShuffled(true);
+		// setIsShuffled(true);
 	};
 
 	const increment = () => {
-		setCurrentCardIndex((prevIndex) => (prevIndex + 1) % cardData.length);
+		setCurrentCardIndex((prevIndex) => (prevIndex + 1) % cards.length);
 		setShowingAnswer(false);
 		setHasSubmittedGuess(false);
 	};
 
 	const decrement = () => {
 		setCurrentCardIndex((prevIndex) =>
-			prevIndex === 0 ? cardData.length - 1 : prevIndex - 1
+			prevIndex === 0 ? cards.length - 1 : prevIndex - 1
 		);
 		setShowingAnswer(false);
 		setHasSubmittedGuess(false);
@@ -70,7 +70,12 @@ const App = () => {
 			</div>
 			<div>
 				<button id="shuffle-button" onClick={shuffleCards}>
-					<img src="./src/assets/shuffle.png" alt="Shuffle" width="35" />
+					<img
+						id="shuffle-icon"
+						src="./src/assets/shuffle.png"
+						alt="Shuffle"
+						width="35"
+					/>
 				</button>
 			</div>
 		</div>

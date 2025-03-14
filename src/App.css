@@ -32,8 +32,8 @@
 }
 
 #shuffle-button {
-	width: 75px;
-	height: 75px;
+	width: 60px;
+	height: 60px;
 	border-radius: 5em;
 	background-color: #f8f8f8;
 	cursor: pointer;
@@ -79,9 +79,6 @@
 .card:hover {
 	transform: scale(1.05);
 	will-change: transform;
-}
-.card:active {
-	animation: click 0.2s forwards;
 }
 
 .card-response {
