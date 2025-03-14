@@ -1,4 +1,6 @@
 import "../App.css";
+import MultipleChoice from "./MultipleChoice";
+import GuessInput from "./GuessInput";
 
 const Cards = ({
 	currentCard,
@@ -7,29 +9,30 @@ const Cards = ({
 	onHideAnswer,
 	cardColor,
 }) => {
-	const { trueFacts, fakeFact } = currentCard;
-	const allFacts = [...trueFacts, fakeFact].sort(() => Math.random() - 0.5);
+	const { trueFacts = "", fakeFact = "", type, answer, question } = currentCard;
 
 	return (
-		<div
-			className={`card ${cardColor}`}
-			onClick={showingAnswer ? onHideAnswer : onShowAnswer}
-		>
-			{showingAnswer ? (
+		<div className={`card ${cardColor}`}>
+			{type === "text-input" ? (
 				<div>
-					<h3>The fake fact was:</h3>
-					<p>{currentCard.fakeFact}</p>
-					<p>(Click to hide)</p>
+					<p>{trueFacts[0]}</p>
+					<GuessInput
+						correctAnswer={answer}
+						onCorrectGuess={onShowAnswer}
+						question={question}
+						showingAnswer={showingAnswer}
+						onShowAnswer={onShowAnswer}
+						onHideAnswer={onHideAnswer}
+					/>
 				</div>
 			) : (
-				<div>
-					<h3>Conspiracy Theories:</h3>
-					<ol>
-						{allFacts.map((fact) => (
-							<li>{fact}</li>
-						))}
-					</ol>
-				</div>
+				<MultipleChoice
+					trueFacts={trueFacts}
+					fakeFact={fakeFact}
+					showingAnswer={showingAnswer}
+					onShowAnswer={onShowAnswer}
+					onHideAnswer={onHideAnswer}
+				/>
 			)}
 		</div>
 	);

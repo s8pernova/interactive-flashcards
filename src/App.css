@@ -31,6 +31,26 @@
 	}
 }
 
+#shuffle-button {
+	width: 60px;
+	height: 60px;
+	border-radius: 5em;
+	background-color: #f8f8f8;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sideways-flex {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+	/* border: 1px solid red; */
+}
+
 .card {
 	display: flex;
 	flex-direction: column;
@@ -60,8 +80,20 @@
 	transform: scale(1.05);
 	will-change: transform;
 }
-.card:active {
-	animation: click 0.2s forwards;
+
+.card-response {
+	font-size: 20px;
+	margin: auto;
+	padding: auto;
+	font-style: oblique;
+	font-weight: bold;
+	/* border: 1px solid red; */
+}
+.correct {
+	color: #008000;
+}
+.incorrect {
+	color: #ff0000;
 }
 
 @keyframes click {

@@ -1,96 +1,42 @@
 import { useState } from "react";
 import Cards from "./components/Cards";
-
-const cardData = [
-	{
-		trueFacts: [
-			"Operation Paperclip recruited Nazi scientists to the US",
-			"The government tested LSD on unsuspecting citizens in the 60s",
-		],
-		fakeFact: "The world is controlled by shape-shifting reptiles",
-		difficulty: "easy",
-	},
-	{
-		trueFacts: [
-			"The FBI kept a file on Einstein due to his political views",
-			"The Montauk Project was an alleged series of secret United States government projects",
-		],
-		fakeFact: "The Earth is hollow and inhabited",
-		difficulty: "easy",
-	},
-	{
-		trueFacts: [
-			"Project Blue Book was a series of studies on UFOs by the US Air Force",
-			"The Philadelphia Experiment was an alleged military experiment",
-		],
-		fakeFact: "The internet is a digital illusion created by AI",
-		difficulty: "easy",
-	},
-	{
-		trueFacts: [
-			"The NSA has been spying on US citizens",
-			"The Tuskegee Syphilis Study deliberately infected African Americans",
-		],
-		fakeFact: "Bigfoot is a government-engineered species",
-		difficulty: "medium",
-	},
-	{
-		trueFacts: [
-			"The US Navy patented a high-energy electromagnetic field generator",
-			"Operation Northwoods proposed committing acts of terrorism against Americans",
-		],
-		fakeFact: "Clouds are created in factories to control global warming",
-		difficulty: "medium",
-	},
-	{
-		trueFacts: [
-			"Project Sunshine involved using the bodies of deceased infants in radioactive testing",
-			"The CIA's Heart Attack Gun is a weapon that can induce a heart attack",
-		],
-		fakeFact:
-			"Wi-Fi signals are used to transmit subliminal messages to the population",
-		difficulty: "medium",
-	},
-	{
-		trueFacts: [
-			"The CIA experimented with mind control in Project MKUltra",
-			"The US government poisoned alcohol during Prohibition",
-		],
-		fakeFact: "The moon landing was faked by Stanley Kubrick",
-		difficulty: "hard",
-	},
-	{
-		trueFacts: [
-			"The government has a secret bunker under Denver Airport",
-			"The High Frequency Active Auroral Research Program (HAARP) can control weather",
-		],
-		fakeFact: "Time travel was discovered in 1985 but has been kept secret",
-		difficulty: "hard",
-	},
-	{
-		trueFacts: [
-			"Project Blue Book was a series of studies on UFOs by the United States Air Force",
-			"The FBI investigated whether Bigfoot was real in the 1970s",
-		],
-		fakeFact:
-			"Global warming is a hoax invented to distract from the world's diminishing oxygen supply",
-		difficulty: "hard",
-	},
-];
+import cardData from "./cardData.json";
 
 const App = () => {
+	const [hasSubmittedGuess, setHasSubmittedGuess] = useState(false);
 	const [currentCardIndex, setCurrentCardIndex] = useState(0);
+	// const [isShuffled, setIsShuffled] = useState(false);
+	const [cards, setCards] = useState(cardData);
+
+	const handleGuessSubmit = (isCorrect) => {
+		setHasSubmittedGuess(true);
+		if (isCorrect) {
+			showAnswer();
+		}
+	};
+
+	const shuffleCards = () => {
+		const shuffled = [...cards];
+		for (let i = shuffled.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+		}
+		setCards(shuffled);
+		// setIsShuffled(true);
+	};
 
 	const increment = () => {
-		setCurrentCardIndex((prevIndex) => (prevIndex + 1) % cardData.length);
+		setCurrentCardIndex((prevIndex) => (prevIndex + 1) % cards.length);
 		setShowingAnswer(false);
+		setHasSubmittedGuess(false);
 	};
 
 	const decrement = () => {
 		setCurrentCardIndex((prevIndex) =>
-			prevIndex === 0 ? cardData.length - 1 : prevIndex - 1
+			prevIndex === 0 ? cards.length - 1 : prevIndex - 1
 		);
 		setShowingAnswer(false);
+		setHasSubmittedGuess(false);
 	};
 
 	const [showingAnswer, setShowingAnswer] = useState(false);
@@ -104,7 +50,7 @@ const App = () => {
 	};
 
 	return (
-		<div className="main-container">
+		<div className="sideways-flex">
 			<div>
 				<h2>Guess the Fake Conspiracy Theory!</h2>
 				<p>Two are real, one is made up. Can you tell?</p>
@@ -114,12 +60,23 @@ const App = () => {
 					onShowAnswer={showAnswer}
 					onHideAnswer={hideAnswer}
 					cardColor={cardData[currentCardIndex].difficulty}
+					onGuessSubmit={handleGuessSubmit}
 				/>
 				<div className="button-container">
 					<button onClick={decrement}>Previous</button>
 					<h3>{currentCardIndex + 1}</h3>
 					<button onClick={increment}>Next</button>
 				</div>
+			</div>
+			<div>
+				<button id="shuffle-button" onClick={shuffleCards}>
+					<img
+						id="shuffle-icon"
+						src="./src/assets/shuffle.png"
+						alt="Shuffle"
+						width="35"
+					/>
+				</button>
 			</div>
 		</div>
 	);

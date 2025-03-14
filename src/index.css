@@ -17,21 +17,9 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-}
 
-.main-container {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	/* border: 2px solid red; */
+	/* user-select: none; */
 }
-
-/* body {
-	padding: 75px;
-	background-color: #1a1a1a;
-} */
 
 a {
 	font-weight: 500;
